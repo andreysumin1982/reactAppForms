@@ -1,0 +1,8 @@
+/*Дефолтные стили для вех компонент*/
+.defaultStyle{
+    border-radius: 20px;
+    padding: 10px;  
+    /**/
+    font-weight: 300;
+    font-size: 18px;
+}
