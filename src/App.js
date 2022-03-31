@@ -9,25 +9,27 @@ import Music from './components/Music/Music.jsx';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 //
-function App() {
+function App(props) {
   //
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Header />
-        <Nav />
+        <Nav friends={props.state.friends}/>
 
-        <div> 
-          <Routes>  {/* Подключаем маршруты */}
-            <Route path="/profile" element = {<Profile />}/>
+        <div>
+          <Routes>  {/* Подключаем маршруты  и передаем через props данные*/}
             {/*В React Router v6 что-бы было поведение как без exact, нужно писать так: 
               <Route path="/dialogs/*" element={<Dialogs/>} /> ( внимание на звездочку)
               Точно также будет поведение <Route exact path="/dialogs/*" element={<Dialogs/>}
               -- ничего не будет маршрутизировать дальше dialogs/. */}
-            <Route path="/dialogs/*" element = {<Dialogs />}/>
-            <Route path="/news" element = {<News />}/>
-            <Route path="/music" element = {<Music />}/>
-            <Route path="/settings" element = {<Settings />}/>
+            <Route path="/profile" element={<Profile postsData = {props.state.profilePage.postsData} 
+              addPost={props.addPost}/>} />
+            <Route path="/dialogs/*" element={<Dialogs dialogsData = {props.state.messagesPage.dialogsData}
+              messagesData={props.state.messagesPage.messagesData} />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
 

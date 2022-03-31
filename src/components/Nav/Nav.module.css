@@ -4,9 +4,26 @@
     background-color: coral;
   }
 /*Ссылки*/
-  .links{
+.links{
   color: white;
+}
+.links:active{
+  color: rgb(236, 16, 16);
 }
 .links:hover{ 
   color: black;
+}
+/*settings*/
+.linkSettings{
+  margin-top: 20px;
+}
+/*friends*/
+.h1{
+  color: rgb(5, 37, 126);
+}
+.friends{
+  margin-top: 50px;
+}
+.friendsName{
+  margin-top: 10px;
 }

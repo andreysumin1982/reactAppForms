@@ -1,45 +1,39 @@
+import React from "react";
 import d from"./Dialogs.module.css"; // Импортируем модуль css
 import defaultStyle from '../../DefaultStyle/DefaultStyle.module.css'
-import { NavLink } from "react-router-dom";
+import DialogItems from "./DialogItem/DialogItem";
+import Message from "./Message/Message";
 
-//
-const DialogItems = (props) =>{
-  let path = "/dialogs/" + props.id  
-  let name = props.name  
+// Создаем компоненту Dialogs и подключаем к ней компоненты DialogItems, Message
+const Dialogs = (props) => {
+  
+  // Перебираем массивы объектов получ. с сервака и вытаскиваем данн. в новые массивы 
+  let dialogsElement = props.dialogsData.map(d => <DialogItems name = {d.name} id={d.id}/>);
+  let messagesElement = props.messagesData.map(m => <Message message = {m.message}/>);
+  //
+  // Создаем пустую ссылку
+  let newMessageElement = React.createRef();
+  let sendMessage = ()=>{
+    let text = newMessageElement.current.value
+    console.log('textarea sendMessage:', text)
+  };
   //
   return (
-    <div className={d.dialog + ' ' + d.active}>
-      <NavLink to={path}>{name}</NavLink>
-    </div>
-  );
-};
-//
-const Message = (props) => {
-  return (
-      <div className={d.message}>{props.message}</div>
-    );
-};
-
-// Создаем компоненту Dialogs
-const Dialogs = () => {
-    return (
           // Использование нескольких классов css
-      <div className={`${defaultStyle.defaultStyle} ${d.dialogs}`}>
-        <div className={d.dialogsItems}>
-          <DialogItems name = "Andrey" id="1"/>
-          <DialogItems name = "Timur" id="2"/>
-          <DialogItems name = "Evgen" id="3"/>
-          <DialogItems name = "Kostya" id="4"/>
-          <DialogItems name = "Alex" id="5"/>
-        </div>
-        <div className={d.messages}>
-          <Message message = "Hello"/>
-          <Message message = "Bla"/>
-          <Message message = "Ept"/>
-          <Message message = "Hi"/>
-        </div>
+    <div className={`${defaultStyle.defaultStyle} ${d.dialogs} ${d.contentImg}`}>
+      <div>
+        {dialogsElement}
       </div>
-    
+      <div>
+        {messagesElement}
+      </div>
+      {/*textarea addMessage */}
+      <div>
+        <textarea className={d.textArea} ref={newMessageElement}></textarea>
+        <button onClick={sendMessage}>Отправить</button>
+      </div>
+
+    </div>
     );
 };
 //

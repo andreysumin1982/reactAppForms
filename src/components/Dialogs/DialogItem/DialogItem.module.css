@@ -1,0 +1,14 @@
+/**/
+.dialogsItems{
+  padding: 10px;
+}
+.dialogsItems img {
+  width: 80px;
+  height: 80px;
+}
+.links{
+  color :rgb(17, 108, 226);
+}
+.links:active{
+  color: rgb(18, 20, 13);
+}
