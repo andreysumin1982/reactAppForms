@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/reactAppForms/static/css/main.d1bc8ff5.css",
-    "main.js": "/reactAppForms/static/js/main.8ba8569e.js",
+    "main.css": "/reactAppForms/static/css/main.30a7cf26.css",
+    "main.js": "/reactAppForms/static/js/main.83e054f7.js",
     "static/js/787.f3d7924f.chunk.js": "/reactAppForms/static/js/787.f3d7924f.chunk.js",
+    "static/media/4.jpg": "/reactAppForms/static/media/4.6e731c0610dc3bb29d1d.jpg",
+    "static/media/1.jpg": "/reactAppForms/static/media/1.5d71616a7b0b1518e975.jpg",
+    "static/media/2.jpg": "/reactAppForms/static/media/2.5f80a2fcff43da2b0081.jpg",
     "index.html": "/reactAppForms/index.html",
-    "main.d1bc8ff5.css.map": "/reactAppForms/static/css/main.d1bc8ff5.css.map",
-    "main.8ba8569e.js.map": "/reactAppForms/static/js/main.8ba8569e.js.map",
+    "main.30a7cf26.css.map": "/reactAppForms/static/css/main.30a7cf26.css.map",
+    "main.83e054f7.js.map": "/reactAppForms/static/js/main.83e054f7.js.map",
     "787.f3d7924f.chunk.js.map": "/reactAppForms/static/js/787.f3d7924f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1bc8ff5.css",
-    "static/js/main.8ba8569e.js"
+    "static/css/main.30a7cf26.css",
+    "static/js/main.83e054f7.js"
   ]
 }
